@@ -1,0 +1,20 @@
+{
+  "name": "object-element-style",
+  "repo": "shallker/object-element-style",
+  "description": "ObjectElement style",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "object-element/object-element": "*"
+  },
+  "development": {
+    "shallker/simple-test": "*", 
+    "shallker/dom-helper": "*" 
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "lib/object-element-style.js"
+  ]
+}

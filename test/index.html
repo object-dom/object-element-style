@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+  </head>
+  <body>
+    <script src="/build/build.js"></script>
+    <script>
+      var dom = require('dom-helper');
+      var test = require('simple-test');
+      var ObjectElement = require('object-element');
+          require('object-element-style');
+
+      test('objectElement.opacity', function () {
+        var div = dom.insertDiv('div');
+        var objectDiv = new ObjectElement(div);
+
+        objectDiv.opacity = '0';
+        test.eq(div.style.opacity, '0');
+        objectDiv.opacity = '0.5';
+        test.eq(div.style.opacity, '0.5');
+        objectDiv.opacity = '1';
+        test.eq(div.style.opacity, '1');
+        dom.remove(div);
+      });
+
+      test('objectElement.style', function () {
+        var div = dom.insertDiv('div');
+        var objectDiv = new ObjectElement(div);
+
+        objectDiv.style.width = '10px';
+        objectDiv.style.height = '20px';
+        test.eq(div.style.width, '10px');
+        test.eq(div.style.height, '20px');
+        dom.remove(div);
+      });
+
+      test('objectElement.show()', function () {
+        var div = dom.insertDiv();
+        var objectDiv = new ObjectElement(div);
+
+        div.style.display = 'none';
+        objectDiv.text = '.show()';
+        objectDiv.show();
+        // dom.remove(div);
+      });
+
+      test('objectElement.hide()', function () {
+        var div = dom.insertDiv();
+        var objectDiv = new ObjectElement(div);
+
+        div.style.display = 'block';
+        objectDiv.text = '.hide()';
+        objectDiv.hide();
+        // dom.remove(div);
+      });
+
+      test('objectElement.hasClass(name)', function () {
+        var div = dom.insertDiv('div', 'div');
+        var objectDiv = new ObjectElement(div);
+
+        test.eq(objectDiv.hasClass('div'), true);
+        dom.remove(div);
+      });
+
+      test('objectElement.addClass(name)', function () {
+        var div = dom.insertDiv('div');
+        var objectDiv = new ObjectElement(div);
+
+        objectDiv.addClass('my-div');
+        test.eq(objectDiv.hasClass('my-div'), true);
+        dom.remove(div);
+      });
+
+    </script>
+  </body>
+</html>

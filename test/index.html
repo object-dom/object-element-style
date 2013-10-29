@@ -24,6 +24,30 @@
         dom.remove(div);
       });
 
+      test('objectElement.width', function () {
+        var div = dom.insertDiv('div');
+        var objectDiv = new ObjectElement(div);
+
+        objectDiv.width = 10;
+
+        test.eq(objectDiv.width, 10)
+        test.eq(div.offsetWidth, 10)
+        test.eq(div.style.width, '10px')
+        dom.remove(div);
+      });
+
+      test('objectElement.height', function () {
+        var div = dom.insertDiv('div');
+        var objectDiv = new ObjectElement(div);
+
+        objectDiv.height = 20;
+
+        test.eq(objectDiv.height, 20)
+        test.eq(div.offsetHeight, 20)
+        test.eq(div.style.height, '20px')
+        dom.remove(div);
+      });
+
       test('objectElement.style', function () {
         var div = dom.insertDiv('div');
         var objectDiv = new ObjectElement(div);

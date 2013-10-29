@@ -1,11 +1,11 @@
 {
   "name": "object-element-style",
-  "repo": "shallker/object-element-style",
+  "repo": "object-dom/object-element-style",
   "description": "ObjectElement style",
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-    "object-element/object-element": "*"
+    "object-dom/object-element": "*"
   },
   "development": {
     "shallker/simple-test": "*", 
